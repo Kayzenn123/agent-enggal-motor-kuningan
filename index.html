@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enggal Motor — Hankook Master Kuningan | Ban &amp; Bengkel Mobil</title>
+<meta name="description" content="Enggal Motor, dealer resmi ban Hankook di Kuningan. Penjualan & pemasangan ban Hankook, servis dan bengkel mobil. Jl. Kepuh No.31, Kuningan.">
+<style>
+:root{
+  --ink:#141414;
+  --ink-2:#1e1e1e;
+  --orange:#e8621a;
+  --orange-dark:#b84a10;
+  --white:#ffffff;
+  --muted:#bdbdbd;
+  --line:#2c2c2c;
+  --wa:#25d366;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  background:var(--ink);
+  color:var(--white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+/* ===== Sticky header ===== */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(20,20,20,.96);
+  border-bottom:3px solid var(--orange);
+  transition:box-shadow .25s ease;
+}
+.site-header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.header-inner{
+  max-width:960px;margin:0 auto;padding:.7rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--white)}
+.brand-mark{
+  width:40px;height:40px;flex:0 0 40px;background:var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:1.3rem;color:#141414;border-radius:6px;
+  letter-spacing:-.05em;
+}
+.brand-name{font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:1.02rem;line-height:1.15}
+.brand-sub{font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--wa);color:#0b2b16;font-weight:900;text-transform:uppercase;
+  letter-spacing:.05em;text-decoration:none;padding:.6rem 1rem;border-radius:8px;
+  font-size:.85rem;border:none;cursor:pointer;
+}
+.btn-wa:hover{filter:brightness(1.08)}
+.btn-wa svg{width:18px;height:18px;fill:#0b2b16}
+/* ===== Hero ===== */
+.hero{
+  position:relative;overflow:hidden;
+  background:#0d0d0d;
+  border-bottom:4px solid var(--orange);
+}
+.hero-photo{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.88) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:960px;margin:0 auto;
+  padding:4.2rem 1rem 3rem;
+}
+.badge{
+  display:inline-block;background:var(--orange);color:#141414;
+  font-weight:900;text-transform:uppercase;letter-spacing:.1em;
+  font-size:.75rem;padding:.4rem .8rem;border-radius:4px;margin-bottom:1rem;
+}
+.hero h1{
+  font-size:clamp(2.1rem,8vw,3.4rem);
+  font-weight:900;text-transform:uppercase;line-height:1.05;letter-spacing:.01em;
+  margin-bottom:.6rem;
+}
+.hero h1 .accent{color:var(--orange)}
+.hero-since{
+  display:inline-block;border:2px solid var(--orange);color:var(--orange);
+  font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;
+  padding:.35rem .75rem;border-radius:4px;margin:.4rem 0 1rem;
+}
+.hero p.lead{color:var(--muted);max-width:34rem;margin-bottom:1.6rem;font-size:1.02rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.45rem;
+  border:2px solid var(--white);color:var(--white);font-weight:900;text-transform:uppercase;
+  letter-spacing:.05em;text-decoration:none;padding:.58rem 1rem;border-radius:8px;font-size:.85rem;
+}
+.btn-outline:hover{background:var(--white);color:var(--ink)}
+.photo-note{
+  position:relative;z-index:2;max-width:960px;margin:0 auto;padding:0 1rem .8rem;
+  font-size:.7rem;color:#8f8f8f;font-style:italic;
+}
+/* ===== Hazard stripe ===== */
+.stripe{
+  height:10px;
+  background:repeating-linear-gradient(-45deg,var(--orange) 0 16px,var(--ink) 16px 32px);
+}
+/* ===== Sections ===== */
+.section{max-width:960px;margin:0 auto;padding:2.6rem 1rem}
+.section-title{
+  font-size:clamp(1.4rem,5vw,2rem);font-weight:900;text-transform:uppercase;
+  letter-spacing:.03em;margin-bottom:.4rem;
+  border-left:6px solid var(--orange);padding-left:.8rem;
+}
+.section-desc{color:var(--muted);margin-bottom:1.6rem;max-width:38rem}
+/* ===== Cards ===== */
+.cards{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{
+  background:var(--ink-2);border:1px solid var(--line);border-radius:10px;
+  padding:1.4rem 1.2rem;position:relative;overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease;
+}
+.card::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--orange);
+}
+.card:hover{transform:translateY(-3px);border-color:var(--orange)}
+.card-icon{width:44px;height:44px;margin-bottom:.8rem;display:block}
+.card-icon svg{width:44px;height:44px;stroke:var(--orange);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:1.05rem;margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.94rem;margin-bottom:1rem}
+.card .price-note{
+  display:inline-block;font-size:.78rem;color:var(--orange);font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;border:1px dashed var(--orange);
+  padding:.3rem .6rem;border-radius:4px;
+}
+/* ===== Why ===== */
+.why{background:#0f0f0f;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-list{list-style:none;display:grid;grid-template-columns:1fr;gap:1rem}
+.why-item{
+  display:flex;gap:1rem;align-items:flex-start;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:1.2rem;
+}
+.why-num{
+  flex:0 0 46px;width:46px;height:46px;background:var(--orange);color:#141414;
+  font-weight:900;font-size:1.3rem;display:flex;align-items:center;justify-content:center;
+  border-radius:8px;
+}
+.why-item h3{font-weight:900;text-transform:uppercase;font-size:1rem;letter-spacing:.03em;margin-bottom:.25rem}
+.why-item p{color:var(--muted);font-size:.93rem}
+/* ===== Location ===== */
+.loc-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.loc-card{
+  background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.2rem;
+}
+.loc-card h3{font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;margin-bottom:.6rem;color:var(--orange)}
+.loc-card address{font-style:normal;font-size:1rem;margin-bottom:.8rem}
+.loc-card address strong{font-size:1.05rem}
+.loc-card .fine{font-size:.78rem;color:#8f8f8f;font-style:italic;margin-top:.6rem}
+.hours-row{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours-row:last-of-type{border-bottom:none}
+.hours-row.closed{color:#8f8f8f}
+.big-wa{
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  background:var(--wa);color:#0b2b16;font-weight:900;text-transform:uppercase;letter-spacing:.06em;
+  text-decoration:none;padding:1rem;border-radius:10px;font-size:1.05rem;margin-top:1.6rem;
+}
+.big-wa:hover{filter:brightness(1.08)}
+.big-wa svg{width:22px;height:22px;fill:#0b2b16}
+.loc-photo{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.loc-photo img{width:100%;height:220px;object-fit:cover;display:block}
+.loc-photo figcaption{font-size:.72rem;color:#8f8f8f;font-style:italic;padding:.6rem 1rem;background:#0f0f0f}
+/* ===== Footer ===== */
+.site-footer{background:#0b0b0b;border-top:3px solid var(--orange);padding:2rem 1rem 2.4rem;text-align:center}
+.footer-inner{max-width:960px;margin:0 auto}
+.footer-brand{font-weight:900;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;margin-bottom:.4rem}
+.footer-brand span{color:var(--orange)}
+.demo-note{
+  display:inline-block;background:#232323;border:1px solid var(--line);color:var(--muted);
+  font-size:.8rem;padding:.6rem .9rem;border-radius:6px;margin:1rem 0;max-width:34rem;
+}
+.sources{font-size:.75rem;color:#6f6f6f;margin-top:1rem;max-width:40rem;margin-left:auto;margin-right:auto}
+.sources a{color:#6f6f6f}
+/* ===== Desktop ===== */
+@media(min-width:720px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .why-list{grid-template-columns:repeat(3,1fr)}
+  .loc-grid{grid-template-columns:1.1fr .9fr}
+  .header-inner{padding:.8rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">EM</span>
+      <span>
+        <span class="brand-name">Enggal Motor</span><br>
+        <span class="brand-sub">Hankook Master &middot; Kuningan</span>
+      </span>
+    </a>
+    <a class="btn-wa" href="https://wa.me/6281211117960?text=Halo%20Enggal%20Motor%2C%20saya%20mau%20tanya%20layanan%20bengkel" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.1c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.2z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-photo" src="https://www.asdatyres.co.uk/blog/wp-content/uploads/2017/04/tyre-fitting-4-1024x683.jpg" alt="Ilustrasi pemasangan ban mobil" loading="eager">
+    <div class="hero-inner">
+      <span class="badge">Hankook Master &mdash; Kuningan, Jawa Barat</span>
+      <h1>Enggal <span class="accent">Motor</span></h1>
+      <span class="hero-since">Melayani sejak 1990</span>
+      <p class="lead">Dealer resmi ban Hankook sekaligus bengkel mobil di Kuningan. Penjualan &amp; pemasangan ban, serta servis kendaraan Anda &mdash; satu atap, langsung dari ahlinya.</p>
+      <div class="hero-cta">
+        <a class="btn-wa" href="https://wa.me/6281211117960?text=Halo%20Enggal%20Motor%2C%20saya%20mau%20tanya%20layanan%20bengkel" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.1c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.2z"/></svg>
+          Chat 0812-1111-7960
+        </a>
+        <a class="btn-outline" href="#layanan">Lihat Layanan</a>
+      </div>
+    </div>
+    <p class="photo-note">Foto ilustrasi kategori bengkel &mdash; bukan foto toko Enggal Motor.</p>
+  </section>
+
+  <div class="stripe" aria-hidden="true"></div>
+
+  <!-- LAYANAN -->
+  <section class="section" id="layanan">
+    <h2 class="section-title">Layanan Kami</h2>
+    <p class="section-desc">Semua urusan ban dan perawatan mobil ditangani langsung di tempat. Detail layanan dan ketersediaan barang paling cepat ditanyakan via WhatsApp.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg></span>
+        <h3>Ban Hankook</h3>
+        <p>Penjualan &amp; pemasangan ban Hankook sebagai dealer resmi. Stok dan tipe ban yang tersedia dapat berubah &mdash; pastikan dulu sebelum datang.</p>
+        <span class="price-note">Tanya stok via WhatsApp</span>
+      </article>
+      <article class="card">
+        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14.5 12l-2.5-2.5 2.7-3.2z"/></svg></span>
+        <h3>Bengkel &amp; Servis</h3>
+        <p>Servis dan perawatan mobil ditangani bengkel yang sudah beroperasi puluhan tahun di Kuningan.</p>
+        <span class="price-note">Tanya layanan via WhatsApp</span>
+      </article>
+      <article class="card">
+        <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/><circle cx="9" cy="12" r="1" fill="#e8621a" stroke="none"/><circle cx="13" cy="12" r="1" fill="#e8621a" stroke="none"/><circle cx="17" cy="12" r="1" fill="#e8621a" stroke="none"/></svg></span>
+        <h3>Konsultasi</h3>
+        <p>Bingung pilih ban yang cocok untuk mobil Anda? Ceritakan kebutuhan lewat chat, kami bantu arahkan.</p>
+        <span class="price-note">Gratis via WhatsApp</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- KENAPA -->
+  <section class="why">
+    <div class="section">
+      <h2 class="section-title">Kenapa Enggal Motor</h2>
+      <p class="section-desc">Alasan pelanggan Kuningan mempercayakan ban dan mobilnya di sini.</p>
+      <ul class="why-list">
+        <li class="why-item">
+          <span class="why-num">1</span>
+          <div>
+            <h3>Dealer Resmi Hankook</h3>
+            <p>Terdaftar sebagai Hankook Master untuk wilayah Kuningan, Jawa Barat &mdash; ban yang dijual dari jalur distribusi resmi.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <span class="why-num">2</span>
+          <div>
+            <h3>Pengalaman Sejak 1990</h3>
+            <p>CV Enggal Motor beroperasi di Kuningan sejak tahun 1990. Puluhan tahun menangani ban dan bengkel bukan hal yang bisa diklaim sembarangan.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <span class="why-num">3</span>
+          <div>
+            <h3>Lokasi Strategis di Jl. Kepuh</h3>
+            <p>Mudah dijangkau di pusat Kuningan. Patokan Jl. Kepuh No.31 &mdash; konfirmasi via WhatsApp bila ragu.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LOKASI & JAM -->
+  <section class="section" id="lokasi">
+    <h2 class="section-title">Lokasi &amp; Jam Operasional</h2>
+    <p class="section-desc">Datang langsung atau chat dulu untuk memastikan ketersediaan layanan.</p>
+    <div class="loc-grid">
+      <div>
+        <div class="loc-card">
+          <h3>Alamat</h3>
+          <address>
+            <strong>Enggal Motor</strong><br>
+            Jl. Kepuh No.31, RT.006/RW.08,<br>
+            Kuningan, Kec. Kuningan,<br>
+            Kab. Kuningan 45511
+          </address>
+          <p class="fine">Catatan: satu sumber lama menulis Jl. Kepuh No.15. Patokan utama: Jl. Kepuh &mdash; konfirmasi via WhatsApp bila ragu.</p>
+          <p style="margin-top:.6rem"><a class="btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Enggal+Motor+Hankook+Master+Jl.+Kepuh+No.+31+Kuningan" target="_blank" rel="noopener">Lihat di Google Maps</a></p>
+        </div>
+        <div class="loc-card" style="margin-top:1rem">
+          <h3>Jam Buka</h3>
+          <div class="hours-row"><span>Senin &ndash; Sabtu</span><strong>08.00 &ndash; 17.00</strong></div>
+        </div>
+        <a class="big-wa" href="https://wa.me/6281211117960?text=Halo%20Enggal%20Motor%2C%20saya%20mau%20tanya%20layanan%20bengkel" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.9.9-1.1 2.2-.2 3.9a11.6 11.6 0 0 0 4.5 4.1c1.7.8 2.4.9 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.2z"/></svg>
+          Chat 0812-1111-7960
+        </a>
+      </div>
+      <figure class="loc-photo">
+        <img src="https://cdn.webnamesandnumbers.com/wp-content/uploads/sites/1618/2025/09/17082601/Auto-Garage-1-1024x682.jpg" alt="Ilustrasi suasana bengkel mobil" loading="lazy">
+        <figcaption>Foto ilustrasi kategori bengkel &mdash; bukan foto toko Enggal Motor.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">Enggal <span>Motor</span></p>
+    <p style="color:#8f8f8f;font-size:.85rem">Hankook Master &middot; Kuningan, Jawa Barat &middot; Sejak 1990</p>
+    <div class="demo-note">Contoh demo konsep &mdash; bukan website resmi Enggal Motor. Dibuat sebagai contoh penawaran pembuatan website.</div>
+    <p class="sources">Sumber data: <a href="https://dimana.id/toko/ban/kuningan/jawa-barat">dimana.id</a> &middot; <a href="https://liburanplus.com/info-lokal/bengkel-mobil-kuningan/">liburanplus.com</a> &middot; <a href="https://id.scribd.com/document/433369023/contoh-laporan-prakerin">Scribd (laporan prakerin)</a>. Foto: ilustrasi kategori (asdatyres.co.uk, babaloautorepairs.ca).</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Sticky header shadow on scroll
+  var header = document.getElementById('siteHeader');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
